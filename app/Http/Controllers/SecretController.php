@@ -26,6 +26,7 @@ class SecretController extends Controller
         if (request()->secret_code == $secret['0']['secret_code'])
         {
             return response()->json($secret['0']['secret'],200);
+            $secret->delete();
         }
         else
         {
