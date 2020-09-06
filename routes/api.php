@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/generate', 'SecretController@store');
+Route::get('/secrets/{secret_key}', 'SecretController@show');
